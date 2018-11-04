@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial Verdana sans-serif;
+    padding: 2em;
+    border: 2px solid blue;
+}
+/* transitive the header */
+.header h1 {
+    margin-left: 200px;
+    color: #f16726;
+    text-shadow: 1px 1px 2px black;
+    transition: font-size 2s ease-out;
+    -webkit-transition: font-size 2s ease-out;
+}
+.header h1:hover {
+    font-size: 180%;
+}
+/* style for device's screen min-width: 600px
+1. set display flex for the body and then set the order for flex items
+    aside-1 : order 1; article : order 2; aside-2: order 3; footer: order 4;
+*/
+@media screen and (min-width: 600px) {
+    .aside {
+        flex: 1 auto;
+    }
+    .wrapper {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .wrapper > * {
+        flex: 1 100%;
+    }
+    .aside-1 {
+        order: 1;
+    }
+
+    .article {
+        order: 2;
+    }
+
+    .aside-2 {
+        order: 3;
+    }
+
+    .footer {
+        order: 4;
+    }
+/* using nested flex to style for the header. */
+    .header {
+        display: flex;
+        flex-flow: row wrap;
+        height: 64px;
+        background-image: -webkit-linear-gradient(to bottom, white 0%, #facd8a 100%);
+        background-image: -moz-linear-gradient(to bottom, white 0%, #facd8a 100%);
+        background-image: -o-linear-gradient(to bottom, white 0%, #facd8a 100%);
+        background-image: linear-gradient(to bottom, white 0%, #facd8a 100%);
+    }
+
+
+
+
+    /* using nested flex to create drop down navigation menu. */
+    #nav_menu a {
+        display: flex;
+        flex-flow: row wrap;
+        list-style: none;
+        text-align: center;
+        background-color: #7b1010;
+    }
+    #nav_menu ul a:hover, a:focus {
+        background-color: silver;
+    }
+    #nav_menu  ul {
+        list-style: none;
+        display: flex;
+    }
+    #nav_menu ul li {
+        position: relative;
+        width: 100%;
+    }
+    #nav_menu ul a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border: 1px solid black;
+        color: white;
+    }
+
+    #nav_menu .drop-down1 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+    }
+    .drop-down1 li {
+        display: none;
+        position: relative;
+        background-color: #7b1010;
+    }
+    #nav_menu ul li:hover .drop-down1 li{
+        display: block;
+    }
+
+    /* flex lay out for the main */
+    .main {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .main h2 {
+        margin-bottom: 10px;
+    }
+
+    .aside {
+        flex-basis: 100px;
+        max-width: 250px;
+        margin-top: 20px;
+    }
+
+    .article {
+        flex-basis: 200px;
+        flex-grow: 2;
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+
+    .article section h3 {
+        border-bottom: 2px solid #7b1010;
+    }
+
+    .article section {
+        margin-bottom: 20px;
+    }
+
+    .article .section img {
+        padding-top: 10px;
+        padding-left: 10px;
+        float: right;
+        transition: 2s;
+    }
+    .article .section img:hover{
+        transform: rotate(20deg);
+    }
+
+    .article section p {
+        text-indent: 10px;
+        padding-top: 5px;
+    }
+
+    .aside-1 ul {
+        list-style: none;
+    }
+
+    .aside-1 ul li {
+        margin-bottom: 20px;
+    }
+
+    .aside-2 h3 {
+        color: #f16726;
+    }
+
+    /*flex lay out for the side bar on the right */
+    .form-fields li {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 10px;
+        padding: 0;
+    }
+
+    .form-fields input[type="text"],
+    .form-fields input[type="email"],
+    .form-fields input[type="password"],
+    .form-fields select {
+        flex: 1 0 230px;
+    }
+
+    .form-fields input[type="submit"] {
+        flex: 1 0 200px;
+        max-width: 200px;
+        margin: 20px 0 20px 10px;
+    }
+
+    .form-fields label {
+        flex: 1 0 90px;
+        max-width: 200px;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        flex: 1 0 300px;
+        margin-right: 2em;
+    }
+
+    .footer {
+        background: #7b1010;
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+}
+
+
+
+
+
