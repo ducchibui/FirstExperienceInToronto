@@ -9,13 +9,15 @@
     <meta name="description" content="The site provides important information
     for new arrivals in Toronto">
     <meta name="keywords" content="immigrant tourist international student newcomer toronto">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 </head>
 <body>
 <div class=wrapper>
     <header class="header">
-        <img src="images/home/toronto.jpg" height="64" width="96" alt="Picture about Toronto">
-        <h1>The First Experience In Toronto</h1>
+        <img src="images/home/toronto.jpg" alt="Picture about Toronto">
+        <h1>Experience In Toronto</h1>
     </header>
     <nav id="nav_menu">
         <ul>
@@ -29,10 +31,10 @@
             <li><a href="#">Tourist</a>
                 <ul class="drop-down1">
                     <li><a href="#">Transportation</a></li>
-                    <li><a href="#">About Toronto</a></li>
+                    <li><a href="abouttoronto.html">About Toronto</a></li>
                 </ul>
             </li>
-            <li><a href="student.html">International Student</a>
+            <li><a href="student.html">Student</a>
                 <ul class="drop-down1">
                     <li><a href="#">Scholarship</a></li>
                     <li><a href="#">Shopping tips</a></li>
@@ -50,7 +52,7 @@
         <aside class="aside aside-1 item">
             <ul>
                 <li>
-                    <img src="images/home/immigrant.jpg"alt="picture about immigrant">
+                    <img src="images/home/immigrant.jpg" alt="picture about immigrant">
                     <p><a href="#">Information for Immigrant</a></p>
                 </li>
                 <li>
@@ -75,22 +77,15 @@
                      alt="Live your dream, immigrate to Canada">
                 <p> In 2011, Canada had a foreign-born populationFootnote 1 of about 6,775,800 people. They represented
                     20.6% of the total population, the highest proportion among the G8 countries.
-                    Between 2006 and 2011, around 1,162,900 foreign-born people immigrated to Canada. These recent
-                    immigrants made up 17.2% of the foreign-born population and 3.5% of the total population in Canada.
-                    Asia (including the Middle East) was Canada's largest source of immigrants during the past five
-                    years, although the share of immigration from Africa, Caribbean, Central and South America increased
-                    slightly.
-                    The vast majority of the foreign-born population lived in four provinces: Ontario, British Columbia,
-                    Quebec and Alberta, and most lived in the nation's largest urban centres</p>
+                    Between 2006 and 2011, around 1,162,900 foreign-born people immigrated to Canada. These recent...
+                </p>
                 <p><a href="#">Read more</a> or <a href="#">Watch video</a></p>
             </section>
             <section class="section">
                 <h3>Tourist</h3>
                 <p>The second largest country in the world, Canada has no shortage of beautiful landscapes
-                    and unique sites for travelers to explore. From coast to coast to coast, the country is
-                    home to vibrant and culturally rich cities, along with incredible natural wonders.
-                    In Western Canada, the Rocky Mountains and cities of Vancouver, Victoria, and Calgary
-                    dominate most itineraries.</p>
+                    and unique sites for travelers to explore. From coast to coast to coast, the country ...
+                </p>
                 <p><a href="#">Read more</a> or <a href="#">Watch video</a></p>
             </section>
 
@@ -98,51 +93,51 @@
                 <h3>International student</h3>
                 <p>Welcome to Toronto! This page provides a variety of information that will help you get
                     acquainted with your new city.
-                    Looking for more general information about living in Toronto? The First Experience In Toronto
-                    page is a good place to start exploring. The City of Toronto also has a helpful website about
-                    Living in Toronto for newcomers to the city.
-                    You can also check out CIE’s Pre-Arrival Guide to help you prepare for your arrival at the
-                    University of Toronto.</p>
+                    Looking for more general information about living in Toronto? The First Experience In Toronto...
+                </p>
                 <p><a href="#">Read more</a> or <a href="#">Watch video</a></p>
             </section>
             <section>
                 <h3>Prospective New comer</h3>
                 <p>Have you recently moved to Toronto? Would you like to meet other newcomers? Are you looking to find
-                    a way to explore the city? The Toronto Newcomers Club offers those who are new to the area a chance
-                    to discover their surroundings, build friendships, and take part in a wide range of activities.</p>
+                    a way to explore the city? The Toronto Newcomers Club offers those who are new to the area a ...</p>
                 <p><a href="#">Read more</a> or <a href="#">Watch video</a></p>
             </section>
         </article>
         <aside class="aside aside-2 item">
             <h3>Register to the news</h3>
-            <form name="register" action="register.php" method="get">
+            <form name="register" action="#" method="get">
                 <ul class="form-fields">
-                    <li><label for="email">Email:</label></li>
-                    <li><input type="email" name="email" id="email"></li>
-                    <li><label for="firstname">First Name:</label></li>
-                    <li><input type="text" name="firstname" id="firstname" required></li>
+                    <li><label for="email">Email:<span id="erremail">*</span></label></li>
+                    <li><input type="text" name="email" id="email"></li>
+                    <li><label for="firstname">First Name:<span id="errfname">*</span></label></li>
+                    <li><input type="text" name="firstname" id="firstname"></li>
                     <li><label for="lastname">Last Name:</label></li>
-                    <li><input type="text" name="lastname" id="lastname" required></li>
+                    <li><input type="text" name="lastname" id="lastname"></li>
                     <li><label for="address">Address: </label></li>
                     <li><input type="text" name="address" id="address"></li>
-                    <li><label for="city">City: </label></li>
-                    <li><input type="text" name="city" id="city" required></li>
-                    <li><label for="state">State: </label></li>
+                    <li><label for="city">City:</label></li>
+                    <li><input type="text" name="city" id="city"></li>
+                    <li><label for="state">State:<span id="errstate">*</span></label></li>
                     <li><input type="text" name="state" id="state"
-                               pattern="[a-zA-Z]{2}" title="2- character code" required></li>
-                    <li><label for="zipcode">Zip Code: </label></li>
+                               pattern="[a-zA-Z]{2}" title="2- character code"></li>
+                    <li><label for="zipcode">Zip Code:<span id="errzipcode">*</span></label></li>
                     <li><input type="text" name="zipcode" id="zipcode"
-                               pattern="\d{5}([\-]\d{4})?" title="5 or 9 digits" required></li>
-                    <li><label for="phone">Phone Number: </label></li>
+                               pattern="\d{5}([\-]\d{4})?" title="5 or 9 digits">
+                    </li>
+                    <li><label for="phone">Phone Number:<span id="errphone">*</span></label></li>
                     <li><input type="text" name="phone" id="phone"
-                               pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="999-999-9999"></li>
-                    <li><label for="membership">Membership Type:</label></li>
+                               pattern="\d{3}[\-]\d{3}[\-]\d{4}" title="999-999-9999">
+                    </li>
+                    <li><label for="membership">Membership Type:<span id="errddl">*</span></label>
                     <li><select name="membership" id="membership">
+                        <option hidden selected="selected">Membership type</option>
                         <option value="monthly">Monthly</option>
                         <option value="quarterly">Quarterly</option>
                         <option value="yearly">Yearly</option>
                     </select></li>
-                    <li><input type="submit" name="submit" id="submit" value="Register"></li>
+
+                    <li><input type="button" name="submit" id="submit" value="Register"></li>
                 </ul>
             </form>
         </aside>
@@ -151,5 +146,79 @@
         <p>&copy;2018 ChiBui@humber.ca</p>
     </footer>
 </div>
+<script>
+    var $ = function (id) {
+        return document.getElementById(id);
+    }
+    window.onload = function () {
+        $('submit').onclick = validateRegister;
+    }
+
+    function validateRegister() {
+        validateEmail();
+        validateFirstname();
+        validateState();
+        validatePhone();
+        validateddl();
+    }
+
+    //1.validate email
+    function validateEmail() {
+        var email = $('email').value;
+        var emailpatt = /^([a-zA-Z0-9_\-]){1,}\@([a-zA-Z0-9_\-\.]){1,}$/;
+        if (email == '')
+            $('erremail').innerHTML = "Please enter email";
+        else if (!(emailpatt).test(email))
+            $('erremail').innerHTML = "Invalid email address";
+        else
+            $('erremail').innerHTML = '';
+    }
+
+    //2.validate firstname
+    function validateFirstname() {
+        var fname = $('firstname').value;
+        var patt = /^[a-zA-z]{1,}$/;
+        if (fname == '') {
+            $('errfname').innerHTML = 'Please enter first name';
+        }
+        else if (!patt.test(fname))
+            $('errfname').innerHTML = 'Invalid name';
+        else $('errfname').innerHTML = '';
+    }
+
+    //3.validate state
+    function validateState() {
+        var state = $('state').value;
+        var patt = /^[a-zA-Z]{2,2}$/;
+        if (state == '') {
+            $('errstate').innerHTML = 'Please enter state';
+        }
+        else if (!patt.test(state))
+            $('errstate').innerHTML = 'Invalid state.Eg. ON';
+        else $('errstate').innerHTML = '';
+    }
+
+    //4. validate phone
+    function validatePhone() {
+        var phone = $('phone').value;
+        var patt = /^[0-9]{3,3}\-[0-9]{3,3}\-[0-9]{4,4}$/;
+        if (phone == '') {
+            $('errphone').innerHTML = 'Please enter phone number';
+        }
+        else if (!patt.test(phone))
+            $('errphone').innerHTML = 'Invalid phone.Eg. xxx-xxxx-xxx';
+        else $('errphone').innerHTML = '';
+    }
+
+    //4. Validate drop down list
+    function validateddl() {
+        var ddl = $('membership');
+        if (ddl.selectedIndex == 0) {
+            $('errddl').innerHTML = 'Please select an option';
+        } else {
+            $('errddl').innerHTML = '';
+        }
+    }
+</script>
 </body>
 </html>

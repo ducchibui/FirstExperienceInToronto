@@ -21,13 +21,6 @@ body {
 .header h1:hover {
     font-size: 180%;
 }
-
-
-
-.aside {
-    flex: 1 auto;
-}
-
 .wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -95,98 +88,39 @@ body {
 #nav_menu ul li:hover .drop-down1 li {
     display: block;
 }
-
-/* flex lay out for the main */
-.main {
-    display: flex;
+.table .table th, .table tr, table td{
+    border: 1px solid #7b1010;
+}
+.btncontrol {
+    display:flex;
     flex-flow: row wrap;
+    justify-content: space-between;
+    list-style-type: none;
 }
-
-.main h2 {
-    margin-bottom: 10px;
+#hdr_top{
+    color: #7b1010;
+    font-size: 150%;
 }
-
-.aside {
-    flex-basis: 100px;
-    margin-top: 20px;
+.thead tr{
+    color: #7b1010;
+    font-size: 120%;
 }
-
-.article {
-    flex-basis: 200px;
-    flex-grow: 2;
-    margin-top: 20px;
-    margin-right: 20px;
+.hdr_no, .hdr_places{
+    text-align: center;
 }
-
-.article section h3 {
-    border-bottom: 2px solid #7b1010;
+#hdr_no{
+    width: 2em;
 }
-
-.article section {
-    margin-bottom: 20px;
+#hdr_places{
+    width: 5em;
 }
-
-.article .section img {
-    padding-top: 10px;
-    padding-left: 10px;
-    float: right;
-    transition: 2s;
-}
-
-.article .section img:hover {
-    transform: rotate(20deg);
-}
-
-.article section p {
+.hdr_information{
     text-indent: 10px;
-    padding-top: 5px;
+    text-align: start;
+    vertical-align: text-top;
 }
-
-.aside-1 ul {
-    list-style: none;
-}
-
-.aside-1 ul li {
-    margin-bottom: 20px;
-}
-
-.aside-2 h3 {
-    color: #f16726;
-}
-
-/*flex lay out for the side bar on the right */
-.form-fields li {
-    display: flex;
-    flex-flow: row wrap;
-    margin-right: 10px;
-    padding: 0;
-}
-.form-fields li span{
-    color: red;
-}
-
-.form-fields input[type="text"],
-.form-fields input[type="email"],
-.form-fields input[type="password"],
-.form-fields select {
-    flex: 1 0 230px;
-}
-
-.form-fields input[type="button"] {
-    flex: 1 0 200px;
-    max-width: 200px;
-    margin: 20px 0 20px 10px;
-}
-
-.form-fields label {
-    flex: 1 0 90px;
-    max-width: 200px;
-    margin-top: 10px;
-}
-
-.form-group {
-    flex: 1 0 300px;
-    margin-right: 2em;
+.hdr_information p {
+    padding: 10px;
 }
 
 .footer {
@@ -196,18 +130,46 @@ body {
     text-transform: uppercase;
     padding: 10px;
 }
-.footer {
-    order: 4;
-}
-/* set media query for normal screen - ipad pro 1024px */
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px)  {
+    /*styling responsive for table*/
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
 
-@media screen and (min-width: 768px ) and (max-width: 1023px) {
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr { border-bottom: 1px solid #ccc; }
 
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 20%;
+    }
+    td:before {
+        position: absolute;
+        top: 3px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    td:nth-of-type(1):before { content: "No."; }
+    td:nth-of-type(2):before { content: "Places"; }
+    td:nth-of-type(3):before { content: "Information"; }
+    td:nth-of-type(4):before { content: "Pictures"; }
+
+    /*styling responsive for the page using grid and flex*/
     .wrapper {
-          display: grid;
-          grid-template-areas: "header header" "nav main" "footer footer";
-      }
+        display: grid;
+        grid-template-areas: "header header" "nav main" "footer footer";
+    }
     .header {
         grid-area: header;
     }
@@ -221,34 +183,10 @@ body {
         grid-area: footer;
     }
 
-    .main{
-        display: flex;
-        flex-flow: wrap column;
-    }
-    .article {
-        order: 1;
-    }
-    .aside-1 {
-        order: 2;
-    }
-    .aside-1 ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-    .aside-2 {
-        order: 3;
-
-    }
-    .footer{
-        order: 4;
-    }
-
-     #nav_menu {
+    #nav_menu {
         grid-row: span 2/4;
         background-color: #7b1010;
     }
-
     #nav_menu ul {
         display: flex;
         flex-flow: column;
@@ -264,6 +202,11 @@ body {
         left: 100%;
     }
 }
+
+
+
+
+
 
 
 

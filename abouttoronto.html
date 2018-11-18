@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Toronto</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/abouttoronto.css">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <meta name="description" content="top rated attraction in Toronto">
+    <meta name="keywords" content="cn tower Royal museum">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+<div class=wrapper>
+    <header class="header">
+        <img src="images/home/toronto.jpg" alt="Picture about Toronto">
+        <h1>About Toronto</h1>
+    </header>
+    <nav id="nav_menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Immigration</a>
+                <ul class="drop-down1">
+                    <li><a href="#">Accommodation</a></li>
+                    <li><a href="#">Workshop</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Tourist</a>
+                <ul class="drop-down1">
+                    <li><a href="#">Transportation</a></li>
+                    <li><a href="abouttoronto.html">About Toronto</a></li>
+                </ul>
+            </li>
+            <li><a href="student.html">Student</a>
+                <ul class="drop-down1">
+                    <li><a href="#">Scholarship</a></li>
+                    <li><a href="#">Shopping tips</a></li>
+                    <li><a href="#">Jobs</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Newcomer</a>
+                <ul class="drop-down1">
+                    <li><a href="#">Information</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="main">
+        <table class="table">
+            <thead class="thead">
+            <tr>
+                <th colspan="4" id="hdr_top">Top rated tourist attraction</th>
+            </tr>
+            <tr class="table_content">
+                <th id="hdr_no" class="hdr_no">No.</th>
+                <th id="hdr_places" class="hdr_places">Places</th>
+                <th id="hdr_information">Information</th>
+                <th id="hdr_pictures" class="hdr_pictures">Pictures</th>
+            </tr>
+            </thead>
+            <tbody class="tbody">
+            <tr>
+                <td headers="hdr_no" class="hdr_no">1.</td>
+                <td headers="hdr_places" class="hdr_places">CN Tower</td>
+                <td headers="hdr_information" class="hdr_information"><p>Toronto's famous landmark, the
+                    553-meter CN Tower, is one of the city's
+                    must see attractions and also the most impossible to miss. Towering above the downtown, the
+                    structure
+                    can be seen from almost everywhere in the city. Visitors have the option of simply appreciating the
+                    building from the ground, or taking a trip up to one of the observation areas or restaurants for
+                    fabulous views of the city and Lake Ontario. The CN Tower, built between 1972 and 1976...</p>
+                    <p>The highest viewing area on the CN Tower is from the Sky Pod at 447 meters above the city with
+                        views that, on clear days, extend to Niagara Falls and New York State. To get here requires
+                        taking two elevators. Below this, at the top of the main elevator is the LookOut at 346 meters
+                        where the Horizons Restaurant is located. One floor below this is the Glass Floor and the
+                        Outdoor Sky Terrace. As the name suggests, the Glass Floor offers a bird's eye view directly
+                        down over the city as visitors stand on a glass floor.</p>
+                    <a href="#">Read more</a>
+                </td>
+                <td headers="hdr_pictures" class="hdr_pictures">
+                    <img src="images/toronto/c.jpg" id ="cntower" alt="images about cn tower in Toronto">
+                    <ul class="btncontrol">
+                        <li><button id="fis1" onclick="first()">First</button></li>
+                        <li><button id="pre1" onclick="changeImages(-1)">Previous</button></li>
+                        <li><button id="aut1" onclick="auto()">Auto/Stop</button></li>
+                        <li><button id="nex1" onclick="changeImages(1)">Next</button></li>
+                        <li><button id="las1" onclick="last()">Last</button></li>
+                    </ul>
+                </td>
+
+            </tr>
+            <tr>
+                <td headers="hdr_no" class="hdr_no">2.</td>
+                <td headers="hdr_places" class="hdr_places">Royal Ontario Museum</td>
+                <td headers="hdr_information" class="hdr_information">
+                    <p>The Royal Ontario Museum, known as the ROM, is one of Canada's premier museums with an
+                        international reputation for excellence. It houses an outstanding collection and also features
+                        major exhibitions from around the world. A controversial expansion of the facility saw a modern
+                        wing featuring glass and sharp angles added on to a very traditional older building. The museum
+                        contains collections covering a great variety of periods from all over the world.
+
+                        Address: 100 Queen's Park, Toronto</p>
+                    <a href="#">Read more</a>
+                </td>
+
+                <td headers="hdr_pictures" class="hdr_pictures">
+                    <img src="images/toronto/r1.jpg"  id ="royal" alt="images about Royal museum in Toronto ">
+                    <ul class="btncontrol">
+                        <li><button id="fis2" onclick="firstRoyal()">First</button></li>
+                        <li><button id="pre2" onclick="changeImagesRoyal(-1)">Previous</button></li>
+                        <li><button id="aut2" onclick="autoRoyal()">Auto/Stop</button></li>
+                        <li><button id="nex2" onclick="changeImagesRoyal(1)">Next</button></li>
+                        <li><button id="las2" onclick="lastRoyal()">Last</button></li>
+                    </ul>
+                </td>
+            </tbody>
+        </table>
+    </main>
+    <footer class="footer">
+        <p>&copy;2018 ChiBui@humber.ca</p>
+    </footer>
+</div>
+<script>
+    var $ = function (id) {
+        return document.getElementById(id);
+    }
+    //declare array of cntower images
+    var cnTowerArray = ["images/toronto/c.jpg", "images/toronto/c1.jpg", "images/toronto/c2.jpg"];
+
+    //make a slide to display images
+    var lowerLimit = 0;
+    var upperLimit = cnTowerArray.length - 1;
+    var place ='cntower';
+    var lock = false;
+    var run;
+
+    function changeImages(direction) {
+        lowerLimit = lowerLimit + direction;
+        if (lowerLimit > upperLimit) {
+            lowerLimit = 0;
+        }
+        else if (lowerLimit < 0) {
+            lowerLimit = upperLimit;
+        }
+        $(place).src = cnTowerArray[lowerLimit];
+        console.log($(place).src);
+    }
+    function first() {
+        lowerLimit = 0;
+        $(place).src = cnTowerArray[lowerLimit];
+    }
+    function last() {
+        upperLimit = cnTowerArray.length - 1;
+        $(place).src = cnTowerArray[upperLimit];
+    }
+
+    function auto()
+    {//begin function
+        // if it's currently scrolling do this
+        var delay = 2000;
+        if(lock == true)
+        {//begin if
+            lock = false;
+            window.clearInterval(run);
+        }//end if
+        // if the function isn't scrolling do this
+        else if(lock == false)
+        {//begin else if
+            lock = true;
+            run = setInterval("changeImages(1)", delay);
+        }//end else if
+
+
+    }//end function
+
+    //declare array of royal images
+    var royalArray = ["images/toronto/r1.jpg", "images/toronto/r2.jpg", "images/toronto/r3.jpg"];
+
+    //make a slide to display images
+
+    var royalLowerLimit = 0;
+    var royalUpperLimit = royalArray.length - 1;
+    var placeRoyal ='royal';
+    function changeImagesRoyal(direction) {
+        royalLowerLimit = royalLowerLimit + direction;
+        if (royalLowerLimit > royalUpperLimit) {
+            royalLowerLimit = 0;
+        }
+        else if (royalLowerLimit < 0) {
+            royalLowerLimit = royalUpperLimit;
+        }
+        $(placeRoyal).src = royalArray[royalLowerLimit];
+        console.log($(placeRoyal).src);
+    }
+    function firstRoyal() {
+        royalLowerLimit = 0;
+        $(placeRoyal).src = royalArray[royalLowerLimit];
+    }
+    function lastRoyal() {
+        royalUpperLimit = royalArray.length - 1;
+        $(placeRoyal).src = royalArray[royalUpperLimit];
+    }
+
+
+    function autoRoyal() {//begin function
+        // if it's currently scrolling do this
+        var delay = 2000;
+        if (lock == true) {//begin if
+            lock = false;
+            window.clearInterval(run);
+        }//end if
+        // if the function isn't scrolling do this
+        else if (lock == false) {//begin else if
+            lock = true;
+            run = setInterval("changeImagesRoyal(1)", delay);
+        }//end else if
+    }
+</script>
+</body>
+</html>

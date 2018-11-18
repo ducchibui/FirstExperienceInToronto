@@ -150,19 +150,15 @@ CSS Grid layout for wider screens, when browser supports grid:
             display: grid;
             grid-template-areas: "header header" "nav main" "footer footer";
         }
-
         .header {
             grid-area: header;
         }
-
         #nav_menu {
             grid-area: nav;
         }
-
         .main {
             grid-area: main;
         }
-
         .footer {
             grid-area: footer;
         }
